@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Login from "./components/login.jsx";
+import Login from "./components/Login.jsx";
 import Users from "./components/users.jsx";
 import NavBar from "./components/NavBar";
 import { Route } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
 import "./App.css";
 
 class App extends Component {
@@ -10,8 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <NavBar />
-        <Route path="/login" component={Login} />
-        <Route path="/users" component={Users} />
+        <Route exact path="/login" component={Login} />
+        <PrivateRoute path="/users" component={Users} />
       </div>
     );
   }

@@ -32,7 +32,7 @@ const Login = props => {
       .then(res => {
         if (res.data.token) {
           localStorage.setItem("token", res.data.token);
-          props.history.redirect("/users");
+          props.history.push("/users");
         } else {
           alert(`${res.data.message}, Now just hit login`);
         }

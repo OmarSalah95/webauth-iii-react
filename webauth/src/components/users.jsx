@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import authenticate from "./authenticate";
-import Login from "./Login.jsx";
 
 class Users extends Component {
   state = {
@@ -19,8 +17,8 @@ class Users extends Component {
   }
   render() {
     return (
-      <div>
-        <h1>User page</h1>;
+      <div className="users">
+        <h1>User page</h1>
         <ul>
           {this.state.users.map(user => (
             <li key={user.id}>{user.username}</li>
@@ -31,4 +29,4 @@ class Users extends Component {
   }
 }
 
-export default authenticate(Users)(Login);
+export default Users;

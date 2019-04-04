@@ -4,14 +4,14 @@ import { withRouter } from "react-router-dom";
 
 const NavBar = props => {
   return (
-    <header>
+    <nav className="navbar">
       <NavLink to="/login">Login</NavLink>
       &nbsp; || &nbsp;
-      {props.match.path === "/users" ? (
+      {props.location.pathname === "/users" ? (
         <button
           onClick={() => {
             localStorage.removeItem("token");
-            props.match.history.push("/login");
+            props.history.push("/login");
           }}
         >
           Log Out
@@ -19,7 +19,7 @@ const NavBar = props => {
       ) : (
         <NavLink to="/users">Users</NavLink>
       )}
-    </header>
+    </nav>
   );
 };
 
